@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aesa Finance</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Aesa Finance</h1>
+      <h4>
+        Aesa uses AI in tandem with automated analysis to create a free and accessible platform which enables citizens to understand inflation, changes in the purchasing power of their money, and dynamic product/commodity/utility prices in order to maximize spending efficiency, and promote a better QoL (Quality of Life) with a lower CoL (Cost of Living).
+      </h4>
+    </div>
+    <div id="main">
+      <section class="grid">
+        <div class="column">
+          <div class="row">
+            <h2>Housing</h2>
+            <p>
+              Based on our automated simple analysis of U.S. housing market data over the last year, it <span class="isGoodTime"></span> a
+              relatively good time to consider purchasing residential real estate (especially single-family housing units). Housing prices
+              are <span class="ThreeMChangeH"></span> in the last two years and <span class="TwelveMChangeH"></span> in the last 5 years.
+              Take this data into account depending on how long you plan to hold your real estate investment or whether it is intended to be
+              your primary residence.
+            </p>
+            <tv-chart data-ticker='USHMI'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>The Power of Your Money</h2>
+            <h3><span class="inflationDirection highlight">Up/Down</span></h3>
+            <p>
+              Based on this month's Consumer Price Index (CPI) report (in reference to the previous month), the purchasing power of your
+              money (chart below) has <span class="powerChangeDirection"></span>. It is
+              <span class="powerChangeLast3Months"></span> compared to 3 months ago and <span class="powerChangeLastYear"></span> compared
+              to last year.
+            </p>
+            <tv-chart data-ticker='CUUR0000SA0R'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Short Term Inflation Outlook</h2>
+            <p>
+              There is currently an <span class="inflationTrend"></span> in inflation in the last month which signals a
+              <span class="inflationImpact"></span> in the price you pay for common goods and services. Additionally, you can expect to pay
+              <span class="HCMoreLess"></span> than you would have paid a year ago.
+            </p>
+            <tv-chart data-ticker='CPIAUCSL'></tv-chart>
+          </div>
+        </div>
+        <!-- next row -->
+        <div class="column">
+          <div class="row">
+            <h2>Food</h2>
+            <p>
+              According to the most recent data by the U.S. Bureau of Labor Statistics, the value you're paying for food has
+              <span class="food1Trend"></span>. <span class="foodGoodBad"></span> to purchase/stock up on ingredients or food items from
+              outside in order to maximize the efficiency of your spending.
+            </p>
+            <tv-chart data-ticker='CPIUFDNS'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2 id="title"></h2>
+            <div class="row">
+              <select id="topic-select">
+                <option value="housing">Housing</option>
+                <option value="cpi" selected>Consumer Price Index</option>
+                <option value="inflation">Inflation</option>
+                <option value="food">Food</option>
+                <option value="energy">Energy</option>
+                <option value="gasoline">Gasoline</option>
+                <option value="apparel">Apparel</option>
+                <option value="airline">Airline Fares</option>
+                <option value="vehicles">New Vehicles</option>
+                <option value="medical">Medical Care</option>
+                <option value="rent">Rent</option>
+              </select>
+
+              <button id="generate-btn">Generate</button>
+
+              <button id="generate-nocache-btn">Generate without cache</button>
+            </div>
+            <p id="subtitle" style="white-space: pre-wrap">Select a topic and click "Generate"</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Energy</h2>
+            <p>
+              Global energy prices <span class="energyTrend"></span> in the last 3 months. This means the overall cost to you across your
+              electric and fuel expenditures has mostly likely <span class="energyCost"></span> since.
+              <span class="energyAdvice"></span> Additionally, refer to the chart featured below for the seemingly permanent long term
+              uptrend. Note that there are always minor price fluctuations caused by energy providers that may go against these conclusions.
+            </p>
+            <tv-chart data-ticker='CPIENGSL'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Electricity</h2>
+            <p>
+              Electricity prices are undergoing <span class="electricityTrend"></span> move in the short term (3M), and
+              <span class="electricityMatching"></span> move in the long-term (1Y). This means that electricity now costs
+              <span class="electricityCostMore"></span> than it did 3 months ago, so
+              <span class="electricityUsage"</span>
+            </p>
+            <tv-chart data-ticker='APU000072610'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Gasoline</h2>
+            <p>
+            Gasoline prices are undergoing <span class="gasolineTrend"></span> move in the short term (3M), and
+            <span class="gasolineGoesAgainst"></span> move in the long-term (1Y). This means that it now costs
+            <span class="gasolineInLine"></span> to fill up your vehicle(s) with fuel/use your stove than it did 3 months ago, and <span class="gasolineUpwards"</span> than it did 1 year ago. Depending on the time range you prefer to manage your spending with and your personal outlook for gas prices (our long term forecast is up), you may want to consider using alternate forms of transportation more, investing in an electric stove, etc. 
+            </p>
+            <tv-chart data-ticker='GASOLINE'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Apparel</h2>
+            <p>
+              The average cost of apparel in the U.S. is showing <span class="apparelShort"></span> move at the moment, and the long-term data is displaying <span class="apparelLong"></span> move. Not taking account the long term data (as some inflation is always going to happen) now is a relatively <span class="apparelGood"></span> time to purchase apparel in order to maximize your spending efficiency.
+            </p>
+            <tv-chart data-ticker='CPIAPPSL'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Airline Fares</h2>
+            <p>
+              The index representative of relative airline fares has <span class="airlineTrend"></span> in the last few months. This means that flights will be <span class="airlineGoodTime"</span>. Be sure to take into account that airline prices will increase when demand increases, so things like holidays and new travel trends may make tickets more expensive for a short period of time, whether the correlated index is up or down.
+            </p>
+            <tv-chart data-ticker='CUSR0000SETG01'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>New Vehicles</h2>
+            <p>
+              The relative prices for new vehicles are <span class="vehiclesUp"></span> in the short term according to data from the last 3 months and they are <span class="vehiclesUpwards"></span> in the long-term (1Y). Since a new vehicle will now cost <span class="vehiclesCostMore"></span> than in the recent past, this <span class="vehiclesBad"></span>. Note that this data should only be used in reference to a basket of new vehicles in general, and if you're getting a good discount in comparison to the vehicle's MSRP (manufacturer suggested retail price), whether the index is up or down should not be a deciding factor.
+            </p>
+            <tv-chart data-ticker='CUUR0000SETA01'></tv-chart>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <h2>Gold</h2>
+            <p>
+              The price of gold <span class="goldChangeLong"></span> over the last two years. Gold also tends to fluctuate seasonally (for example, the price has <span style="color: #ff3d3d;">dropped</span> every September for a decade, except in 2016). Based on this historical data it is probably a <span style="color: #3adb2c;">good idea to look into purchasing some as a long term investment in your portfolio, to be made into jewelry, or to resell.</span>
+            </p>
+            <tv-chart data-ticker='CPIMEDSL'></tv-chart>
+          </div>
+        </div>
+        <div class="row">
+          <p3>While we aim to provide information that is current and accurate, this is not officially financial advice.<br><br>AI responses are cached for one week. To generate a fresh response, click "Generate without cache". The new response might be the same.<br><br>If the AI analysis is stuck on generating, reload the page and try again.</p3>
+        </div>
+      </section>
+    </div>
+    <script src="util.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
